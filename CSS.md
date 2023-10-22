@@ -81,10 +81,7 @@ El selector de clase selecciona elementos HTML con un atributo de clase especifi
  }
  ```
  
-### Resumen
- ![Alt text](image.png)
 
----
 
 ## Añadir CSS a HTML
 Cuando un navegador lee una hoja de estilos, le dara formato al documento HTML de acuerdo a la informacion que tiene la hoja de estilos.
@@ -225,29 +222,147 @@ Cada tipo de de selector recibe puntos que indican su especificidad, y se suman 
 Cada selector tiene su lugar en la jerarquía de especificidad. Hay cuatro categorias que definen el nivel de especificidad de un selector.
 
 
+<img align="center" width="100%" height="100%" src="https://res.cloudinary.com/practicaldev/image/fetch/s--gR1j5EJy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9wc5w6w10yriwydymc55.png">
+
+---
+
+# Propiedades
+## Colors
+Los colores se pueden especificar usando en nombres de colores predefinidos o valores RGB, HEX, HSL, RGBA o HSLA
+
+### Nombre del color
+
+```css
+.box{
+    color: red;
+}
+```
+
+### Background Color
+Puedes poner color a un fondo de un elemento HTML con el siguiente bloque de codigo:
+
+```css
+.body{
+    background-color: purple;
+}
+```
+
+### Colores RGB
+Un color rgb representa las fuentes de luz (RED, GREEN y BLUE).
+
+En CSS un color puede representarse como un valor RGB usando esta formula:
+
+
+<center>
+<code>rgb(red, green, blue)</code>
+</center>
+
+Cada parametro (red, green, blue) define la intensidad del color entre 0 y 255.
+
+Por ejemplo, <code>rgb(255, 0, 0)</code> mostrara el color rojo, porque el rojo tiene el valor mas alto y los demas tienen 0. Para mostrar el color negro deberemos poner todos los colores en 0, <code>rgb(0, 0, 0)</code>
+
+
+```css
+p {
+    background-color: rgb(255, 87, 51);
+}
+```
+
+---
+
+## Bordes
+La propiedad <code>border</code> permite especificar el estilo, anchura, y color del borde del elemento.
+
+<img align="center" width="100%" height="100%" src="https://img.uxcel.com/practices/the-border-style-property-1621321248336/a-1664877190163.jpg">
+
+## Margenes
+Los margenes son usados para crear espacio alrededor de los elementos. Con CSS tienes completo control sobre los margenes. Hay propiedades para colocar el margen por cada lado del elemento (top, bottom, right, left).
+
+### Lados individuales
+CSS tiene propiedades para especificar el margen por cada lado de un elemento:
+- <code>margin-top</code>
+- <code>margin-right</code>
+- <code>margin-left</code>
+- <code>margin-bottom</code>
+
+Todas estas propiedades pueden estas seguidas de los siguientes valores:
+
+- auto - El navegador calcula el margen.
+- length - Especifica un margen en px, pt, cm, etc.
+- % - Especifica un margen en porcentaje de la anchura del elemento contenedor.
+
+Ejemplo:
+```css
+p {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+}
+```
+
+El bloque anterior de codigo puede reducirse a este bloque de codigo
+
+```css
+p {
+    margin: 100px 100px 150px 80px;
+}
+```
+
+## Padding
+Padding es usado para crear espacio alrededor del contenido del elemento, dentro de bordes definidos.
+CSS tiene propiedades para especificar el padding por cada lado de un elemento:
+
+- <code>padding-top</code>
+- <code>padding-right</code>
+- <code>padding-left</code>
+- <code>padding-bottom</code>
+
+Todas estas propiedades pueden estas seguidas de los siguientes valores:
+
+- length - Especifica un padding en px, pt, cm, etc.
+- % - Especifica un padding en porcentaje de la anchura del elemento contenedor.
+
+Ejemplo:
+```css
+div {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 20px;
+  padding-left: 50px;
+}
+```
+
+El bloque anterior de codigo puede reducirse a este bloque de codigo
+
+```css
+div {
+    padding: 30px 30px 20px 50px;
+}
+```
+
+<img align="center" width="100%" height="100%" src="https://lh4.googleusercontent.com/R3-2VMPvVXQPC0hWujqUXeRc9L_eehOe0kzKwniE0W02f2O0ZJyYhXSWAEmF4gvBwkpRIQRmwB4z8NkG-xW5U6tdF2YDV1wzzaogrrVQA3op9SD13myk_4yRAnTu55LtQ0IaMxN7blHDU9oGTGMzt6J8a3d0sex8SjJEdIhKjHG9ECHcc7HBTOYPvhk2">
+
+---
 
 
 
+## Height, Width y Max-width
+Las propiedades <code>height</code> y <code>width</code> son usadas para asignar la altura y anchura de un elemento HTML.
 
+Las propiedades de altura y anchura no incluyen padding, bordes o margenes. Coloca la altura y anchura dentro del padding, borde y margen del elemento.
 
+Las propiedades <code>width</code> y <code>height</code> estan seguidas por los siguientes valores:
+- auto: El navegador calcula la altura y anchura.
+- length: Define los valores en px, cm, etc
+- %: Define el valor en un porcentaje del contenedor
+- initial: Valor por defecto
 
-
-
-
-
-
-
-
-<!-- ### Cascada
-
-
-Todos los estilos de una pagina caeran en forma de una "cascada" dentro de una nueva hoja de estilos "virual" siguiendo las siguientes reglas, donde el numero 1 tiene la prioridad mas alta:
-
-1. Estilos en linea (dentro de un elemento HTML)
-2. Hojas de estilo internas y externas (en la seccion `<head>`)
-3. Estilos por defecto del navegador
-
-De forma que los estilos en linea tienen la prioridad mas alta y sobreescribiran las hojas de etilo internas, externas y del navegador.
-
-> *EL ULTIMO ESTILO DECLARADO SERA EL QUE SE TOME* -->
-
+Ejemplo
+```css
+div {
+  height: 200px;
+  width: 50%;
+  background-color: blue;
+}
+```
