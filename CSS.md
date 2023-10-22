@@ -273,7 +273,9 @@ p {
 ## Bordes
 La propiedad <code>border</code> permite especificar el estilo, anchura, y color del borde del elemento.
 
-<img align="center" width="100%" height="100%" src="https://img.uxcel.com/practices/the-border-style-property-1621321248336/a-1664877190163.jpg">
+<p align="center">
+<img align="center" width="70%" src="https://img.uxcel.com/practices/the-border-style-property-1621321248336/a-1664877190163.jpg">
+</p>
 
 ## Margenes
 Los margenes son usados para crear espacio alrededor de los elementos. Con CSS tienes completo control sobre los margenes. Hay propiedades para colocar el margen por cada lado del elemento (top, bottom, right, left).
@@ -340,8 +342,9 @@ div {
     padding: 30px 30px 20px 50px;
 }
 ```
-
-<img align="center" width="100%" height="100%" src="https://lh4.googleusercontent.com/R3-2VMPvVXQPC0hWujqUXeRc9L_eehOe0kzKwniE0W02f2O0ZJyYhXSWAEmF4gvBwkpRIQRmwB4z8NkG-xW5U6tdF2YDV1wzzaogrrVQA3op9SD13myk_4yRAnTu55LtQ0IaMxN7blHDU9oGTGMzt6J8a3d0sex8SjJEdIhKjHG9ECHcc7HBTOYPvhk2">
+<p align="center">
+<img width="40%" src="https://lh4.googleusercontent.com/R3-2VMPvVXQPC0hWujqUXeRc9L_eehOe0kzKwniE0W02f2O0ZJyYhXSWAEmF4gvBwkpRIQRmwB4z8NkG-xW5U6tdF2YDV1wzzaogrrVQA3op9SD13myk_4yRAnTu55LtQ0IaMxN7blHDU9oGTGMzt6J8a3d0sex8SjJEdIhKjHG9ECHcc7HBTOYPvhk2">
+</p>
 
 ---
 
@@ -362,7 +365,180 @@ Ejemplo
 ```css
 div {
   height: 200px;
-  width: 50%;
+  width: 500px;
   background-color: blue;
 }
 ```
+
+### Max-width
+La propiedad <code>max-width</code> se utiliza para asignar el ancho maximo de un elemento. Puede ser especificada en valores de longitud (px, cm, etc) o en un porcentaje del bloque contenedor
+
+El problema con el <code>div</code> del ejemplo anterior ocurre cuando la ventana del navegador es *menor* que el *width* del elemento (500px). Entonces el navegador agregara un scroll horizontal para que el elemento sea visible.
+
+Si utilizamos la propiedad <code>max-width</code> en esta situacion mejoraremos el control del navegador en ventanas mas reducidas.
+
+Si utilizas las dos propiedades <code>width</code> y <code>max-width</code> en el mismo elemento, y el valor de <code>width</code> es mayor que el de <code>max-width</code>, el valor de <code>width</code> sera ignorado y se asignara la propiedad <code>max-width</code> al elemento.
+
+```css
+div {
+  max-width: 500px;
+  height: 100px;
+  background-color: powderblue;
+}
+```
+
+## Modelo de caja
+En CSS, el termino "box model" es usado cuando hablamos de diseño y layout. El modelo de caja o box model es esensialmente una *caja* que envuelve a cada elemento HTML. Consiste en margenes, bordes, padding y el contenido del elemento.
+
+<p align="center">
+<img width="60%" src="https://miro.medium.com/v2/resize:fit:1400/1*E_YuB8x1B3T3h6PIJ_I9qQ.png">
+</p>
+
+## Textos
+CSS tienen muchas propiedades para formatear texto.
+
+### Text Color
+
+La propiedad <code>color</code> se utiliza para asignar el color a un texto.
+```css
+body {
+  color: blue;
+}
+``` 
+### Text Color y Background-color
+```css
+body {
+  background-color: lightgrey;
+  color: blue;
+}
+```
+
+### Text Alignment
+
+La propiedad <code>text-align</code> se utiliza para asignar una alineacion horizontal a un texto. Un texto puede estar alineado a la derecha, izquierda, centrado o jutificado.
+
+```css
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: left;
+}
+
+h3 {
+  text-align: right;
+}
+```
+
+Cuando la propiedad <code>text-align</code> tiene el valor "justify", cada linea es estirada para que todas las lineas tengan el mismo largo y los margenes izquierdo y derecho estan ajustados (como en revistas y periodicos):
+
+```css
+div {
+  text-align: justify;
+}
+```
+---
+
+## CSS Fonts
+Escoger la fuente correcta tienen un gran impacto en como los usuarios experimentan una pagina web. La fuente correcta puede crear una fuerte identidad  para tu marca.
+
+Utilizar una fuente que sea facil de leer es importante. La fuente agrega valor a tu texto. Es igual de importante escoger el color y tamaño correctos para la fuente.
+
+### Fuentes Genericas
+
+En CSS hay cinco familias de fuentes genericas:
+
+1. **Serif**
+2. **Sans-serif**
+3. **Monospace**
+4. **Cursive**
+5. **Fantasy**
+
+<p align="center">
+<img width="60%" src="https://i.ytimg.com/vi/I1sUPpE9OHg/maxresdefault.jpg">
+</p>
+
+### Propiedad font-family
+En CSS se utiliza la propiedad <code>font-family</code> para especificar la fuente de un texto.
+
+```css
+.p1 {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.p2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.p3 {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+```
+
+### Font Size
+
+La propiedad <code>font-size</code> asigna el tamaño de un texto. Poder gestionar el tamaño es importante en el diseño web. De cualquier forma, no se deberia utilizar <code>font-size</code> para hacer que los parrafos se vean como titulos, o que los titulos luzcan como parrafos.
+
+Siempre se debe utilzar la etiqueta HTML indicada, como `<h1>` - `<h6>` para encabezados y `<p>` para parrafos.
+
+Para hacer uso de la propiedad <code>font-size</code> le asignaremos un valor en px:
+
+```css
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 14px;
+}
+```
+---
+## CSS Layout
+
+
+
+### CSS Display
+
+La propiedad <code>display</code> es la propiedad mas importante para controlar el layout.
+
+La propiedad <code>display</code> especifica si un elemento se muestra y como se muestra. Cada elemento HTML tiene un valor por defecto para la propiedad <code>display</code> dependiendo el tipo de elemento que este sea. El valor por defecto de la mayoria de elementos es <code>block</code> o <code>inline</code>.
+
+#### Elementos block-level
+
+Un elemento <code>block-level</code> siempre empieza en una nueva linea y toma el ancho maximo disponible (se extiende de izquierda a derecha lo mas que pueda).
+
+Ejemplos de elementos block-level:
+- `<div>`
+- `<h1>` - `<h6>`
+- `<p>`
+- `<form>`
+- `<header>`
+- `<footer>`
+- `<section>`
+
+#### Elementos Inline
+
+Un elemento inline no empieza en una nueva linea y toma solo el ancho necesario.
+
+Ejemplos de elementos inline:
+- `<span>`
+- `<a>`
+- `<img>`
+
+#### Display none
+<code>display: none;</code> es comunmente utilizado junto a ***JavaScript*** para ocultar y mostrar elementos sin la necesidad de eliminarlos y crearlos de nuevo.
+  
+### Position
+La propiedad <code>position</code> especifica el tipo de metodo de posicionamiento que un elemento utilizara.
+
+Existen cinco valores para <code>position</code>:
+- static
+- relative
+- fixed
+- absolute
+- sticky
